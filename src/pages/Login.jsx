@@ -1,14 +1,42 @@
-import React from 'react';
+import React, { use } from 'react';
 import { FcGoogle } from 'react-icons/fc';
 import { Link } from 'react-router';
+import { AuthContext } from '../provider/AuthContext';
+import { toast } from 'react-toastify';
 
 const Login = () => {
+    const { logInUser, setUser, googleSignIn } = use(AuthContext)
+
     const handleLogin = e => {
         e.preventDefault()
         const email = e.target.email.value
         const password = e.target.password.value
 
         console.log({ email, password })
+
+        logInUser(email, password)
+            .then(result => {
+                console.log(result.user)
+                toast.success('Login succesful')
+                setUser(result.user)
+            })
+            .catch(error => {
+                console.log(error.message)
+                toast.error(error.message)
+            })
+    }
+
+    const handleGoogleSIgnIn = () => {
+        googleSignIn()
+            .then(result => {
+                console.log(result.user)
+                toast.success('Login succesful')
+                setUser(result.user)
+            })
+            .catch(error => {
+                console.log(error.message)
+                toast.error(error.message)
+            })
     }
 
     return (
@@ -32,7 +60,7 @@ const Login = () => {
                         <span>or</span>
                         <div className="w-[3rem] h-px border border-gray-500"></div>
                     </div>
-                    <button className="btn btn-outline btn-info hover:text-white text-black">
+                    <button onClick={handleGoogleSIgnIn} type='button' className="btn btn-outline btn-info hover:text-white text-black">
                         <FcGoogle size={22} />
                         Login with Google
                     </button>
