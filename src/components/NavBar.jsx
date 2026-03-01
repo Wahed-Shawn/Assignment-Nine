@@ -2,9 +2,22 @@ import React, { use } from 'react';
 import logoImg from '../assets/logo.png'
 import { Link, NavLink } from 'react-router';
 import { AuthContext } from '../provider/AuthContext';
+import { toast } from 'react-toastify';
 
 const NavBar = () => {
-    const { user } = use(AuthContext)
+    const { user, signOutUser,setUser, setUserloading, setLoading } = use(AuthContext)
+
+    const handleLogOut = () => {
+        signOutUser()
+            .then(() => {
+                toast.success('Log out successful')
+                setUser(null)
+                // console.log(user)
+            })
+            .catch(error => {
+                toast.error(error.message)
+            })
+    }
 
     const links = <>
         <li><NavLink to='/' className={'font-semibold text-lg'}>Home</NavLink></li>
@@ -47,7 +60,7 @@ const NavBar = () => {
                                 popover="auto" id="popover-1" style={{ positionAnchor: "--anchor-1" }}>
                                 <li className='text-center font-bold text-lg'>{user.displayName}</li>
                                 <li className='text-center font-semibold'>{user.email}</li>
-                                <li><button className='btn btn-outline btn-error hover:text-white text-lg'>log Out</button></li>
+                                <li><button onClick={handleLogOut} className='btn btn-outline btn-error hover:text-white text-lg'>log Out</button></li>
                             </ul>
                         </div>) : <div className='space-x-3.5'>
                             <Link to='/login' className="btn bg-[#cef7ce] text-green-600 border-0">Login</Link>
