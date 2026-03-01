@@ -1,8 +1,10 @@
 import React, { use } from 'react';
 import logoImg from '../assets/logo.png'
 import { Link, NavLink } from 'react-router';
+import { AuthContext } from '../provider/AuthContext';
 
 const NavBar = () => {
+    const { user } = use(AuthContext)
 
     const links = <>
         <li><NavLink to='/' className={'font-semibold text-lg'}>Home</NavLink></li>
@@ -34,9 +36,24 @@ const NavBar = () => {
                         {links}
                     </ul>
                 </div>
-                <div className="navbar-end space-x-3.5">
-                    <Link to='/login' className="btn">Login</Link>
-                    <Link to='/register' className="btn">Register</Link>
+                <div className="navbar-end">
+                    {
+                        user ? (<div className='h-[3.8rem] w-[3.8rem] rounded-full'>
+                            <button className="btn h-full w-full rounded-full p-0" popoverTarget="popover-1" style={{ anchorName: "--anchor-1" }}>
+                                <img src="https://lh3.googleusercontent.com/a/ACg8ocJgmUgqp6xhMe9o36I7rzZsxoWGSgQizVNy92pFWoyXo0F5jfQ=s400-c" className='h-full w-full rounded-full object-cover' />
+                            </button>
+
+                            <ul className="dropdown menu w-fit rounded-box bg-base-100 shadow-sm space-y-2.5"
+                                popover="auto" id="popover-1" style={{ positionAnchor: "--anchor-1" }}>
+                                <li className='text-center font-bold text-lg'>{user.displayName}</li>
+                                <li className='text-center font-semibold'>{user.email}</li>
+                                <li><button className='btn btn-outline btn-error hover:text-white text-lg'>log Out</button></li>
+                            </ul>
+                        </div>) : <div className='space-x-3.5'>
+                            <Link to='/login' className="btn bg-[#cef7ce] text-green-600 border-0">Login</Link>
+                            <Link to='/register' className="btn bg-[#0FBD0F] text-white border-0">Register</Link>
+                        </div>
+                    }
                 </div>
             </div>
         </div>
