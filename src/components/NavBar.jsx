@@ -1,8 +1,9 @@
-import React from 'react';
+import React, { use } from 'react';
 import logoImg from '../assets/logo.png'
 import { Link, NavLink } from 'react-router';
 
 const NavBar = () => {
+
     const links = <>
         <li><NavLink to='/' className={'font-semibold text-lg'}>Home</NavLink></li>
         <li><NavLink to='/plants' className={'font-semibold text-lg'}>Plants</NavLink></li>
