@@ -4,17 +4,23 @@ import { AuthContext } from '../provider/AuthContext';
 import { toast } from 'react-toastify';
 
 const Register = () => {
-    const { createUser } = use(AuthContext)
+    const { createUser, updateProfileFunc } = use(AuthContext)
 
     const handleRegister = e => {
         e.preventDefault()
+        const displayName = e.target.name.value
+        const photoURL = e.target.photoUrl.value
         const email = e.target.email.value
         const password = e.target.password.value
 
-        console.log({ email, password })
+        // console.log({ name, photoUrl, email, password })
 
         createUser(email, password)
             .then(result => {
+                updateProfileFunc({
+                    displayName,
+                    photoURL
+                })
                 console.log(result.user)
                 toast.success('Registration succesful')
             })
@@ -32,9 +38,9 @@ const Register = () => {
                     <p className='text-gray-400 mb-4 text-center'>Create an account to start your plant journey</p>
                     <fieldset className="fieldset">
                         <label className="label">Name</label>
-                        <input type="text" className="input" placeholder="Name" />
+                        <input type="text" name='name' className="input" placeholder="Name" />
                         <label className="label">Photo URL</label>
-                        <input type="text" className="input" placeholder="Photo URL" />
+                        <input type="text" name='photoUrl' className="input" placeholder="Photo URL" />
                         <label className="label">Email</label>
                         <input type="email" name='email' className="input" placeholder="Email" />
                         <label className="label">Password</label>

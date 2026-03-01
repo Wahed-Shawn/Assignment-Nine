@@ -1,11 +1,13 @@
-import React, { use } from 'react';
+import React, { use, useRef } from 'react';
 import { FcGoogle } from 'react-icons/fc';
 import { Link } from 'react-router';
 import { AuthContext } from '../provider/AuthContext';
 import { toast } from 'react-toastify';
 
 const Login = () => {
-    const { logInUser, setUser, googleSignIn } = use(AuthContext)
+    const { logInUser, setUser, googleSignIn, resetPassword } = use(AuthContext)
+
+    const emailRef = useRef()
 
     const handleLogin = e => {
         e.preventDefault()
@@ -39,6 +41,12 @@ const Login = () => {
             })
     }
 
+    const handleForgotPassword = () => {
+        resetPassword(emailRef.current.value)
+        toast.info('Please check your email to reset password')
+        console.log(emailRef.current.value)
+    }
+
     return (
         <div className="container mx-auto min-h-screen">
             <div className="card bg-[#F6F8F6] w-full max-w-sm shrink-0 shadow-2xl mx-auto">
@@ -47,10 +55,10 @@ const Login = () => {
                     <p className='text-gray-400 text-center mb-4'>Please enter your details to login</p>
                     <fieldset className="fieldset">
                         <label className="label">Email</label>
-                        <input type="email" name='email' className="input" placeholder="Email" />
+                        <input type="email" name='email' ref={emailRef} className="input" placeholder="Email" />
                         <label className="label">Password</label>
                         <input type="password" name='password' className="input" placeholder="Password" />
-                        <div><a className="link link-hover">Forgot password?</a></div>
+                        <div><a onClick={handleForgotPassword} className="link link-hover">Forgot password?</a></div>
                         <button className="btn btn-neutral mt-4 bg-[#0FBD0F] border-0 text-white">Login</button>
                     </fieldset>
 
