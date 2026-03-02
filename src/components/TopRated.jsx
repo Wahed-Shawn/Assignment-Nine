@@ -15,7 +15,7 @@ const TopRated = () => {
     console.log(topRated)
 
     return (
-        <div className='my-[8rem]'>
+        <div className='mt-[8rem] mb-[4rem]'>
             <h1 className='text-3xl font-semibold'>Top Rated Indoor Plants</h1>
             <p className='mb-2 text-gray-500'>Discover the most loved companions for your living spaces.</p>
 
