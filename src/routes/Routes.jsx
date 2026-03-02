@@ -6,6 +6,7 @@ import MyProfile from "../pages/MyProfile";
 import Login from "../pages/Login";
 import Register from "../pages/Register";
 import PrivateRoute from "./PrivateRoute";
+import PlantDetails from "../pages/PlantDetails";
 
 const router = createBrowserRouter([
     {
@@ -19,7 +20,13 @@ const router = createBrowserRouter([
             },
             {
                 path: '/plants',
-                Component: Plants
+                Component: Plants,
+                loader: () => fetch('/Plants.json')
+            },
+            {
+                path: '/plantDetails/:id',
+                element: <PrivateRoute><PlantDetails /></PrivateRoute>,
+                loader: () => fetch('/Plants.json')
             },
             {
                 path: '/myProfile',

@@ -12,7 +12,7 @@ const TopRated = () => {
     const plantsData = useLoaderData()
 
     const topRated = plantsData.sort((a, b) => b.rating - a.rating).slice(0, 6)
-    console.log(topRated)
+    // console.log(topRated)
 
     return (
         <div className='mt-[8rem] mb-[4rem]'>
