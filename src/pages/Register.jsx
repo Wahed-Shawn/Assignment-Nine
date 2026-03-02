@@ -1,10 +1,12 @@
 import React, { use } from 'react';
-import { Link } from 'react-router';
+import { Link, useNavigate } from 'react-router';
 import { AuthContext } from '../provider/AuthContext';
 import { toast } from 'react-toastify';
 
 const Register = () => {
     const { createUser, updateProfileFunc } = use(AuthContext)
+
+    const navigate = useNavigate()
 
     const handleRegister = e => {
         e.preventDefault()
@@ -23,6 +25,7 @@ const Register = () => {
                 })
                 console.log(result.user)
                 toast.success('Registration succesful')
+                navigate('/')
             })
             .catch(error => {
                 console.log(error.message)

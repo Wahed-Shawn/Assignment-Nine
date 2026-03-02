@@ -3,9 +3,10 @@ import logoImg from '../assets/logo.png'
 import { Link, NavLink } from 'react-router';
 import { AuthContext } from '../provider/AuthContext';
 import { toast } from 'react-toastify';
+import { BeatLoader } from 'react-spinners';
 
 const NavBar = () => {
-    const { user, signOutUser,setUser, setUserloading, setLoading } = use(AuthContext)
+    const { user, signOutUser, setUser, loading } = use(AuthContext)
 
     const handleLogOut = () => {
         signOutUser()
@@ -51,7 +52,7 @@ const NavBar = () => {
                 </div>
                 <div className="navbar-end">
                     {
-                        user ? (<div className='h-[3.8rem] w-[3.8rem] rounded-full'>
+                        loading ? <BeatLoader  color="#3db520" /> : user ? (<div className='h-[3.8rem] w-[3.8rem] rounded-full'>
                             <button className="btn h-full w-full rounded-full p-0" popoverTarget="popover-1" style={{ anchorName: "--anchor-1" }}>
                                 <img src="https://lh3.googleusercontent.com/a/ACg8ocJgmUgqp6xhMe9o36I7rzZsxoWGSgQizVNy92pFWoyXo0F5jfQ=s400-c" className='h-full w-full rounded-full object-cover' />
                             </button>

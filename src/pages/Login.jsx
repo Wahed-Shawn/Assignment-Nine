@@ -1,13 +1,18 @@
-import React, { use, useRef } from 'react';
+import React, { use, useRef, useState } from 'react';
 import { FcGoogle } from 'react-icons/fc';
-import { Link } from 'react-router';
+import { Link, useLocation, useNavigate } from 'react-router';
 import { AuthContext } from '../provider/AuthContext';
 import { toast } from 'react-toastify';
+import { IoEye, IoEyeOff } from 'react-icons/io5';
 
 const Login = () => {
     const { logInUser, setUser, googleSignIn, resetPassword } = use(AuthContext)
+    const [show, setShow] = useState(false)
 
     const emailRef = useRef()
+    const navigate = useNavigate()
+    const location = useLocation()
+    console.log(location)
 
     const handleLogin = e => {
         e.preventDefault()
@@ -21,6 +26,7 @@ const Login = () => {
                 console.log(result.user)
                 toast.success('Login succesful')
                 setUser(result.user)
+                navigate(location.state || '/')
             })
             .catch(error => {
                 console.log(error.message)
@@ -34,6 +40,7 @@ const Login = () => {
                 console.log(result.user)
                 toast.success('Login succesful')
                 setUser(result.user)
+                navigate(location.state || '/')
             })
             .catch(error => {
                 console.log(error.message)
@@ -57,7 +64,12 @@ const Login = () => {
                         <label className="label">Email</label>
                         <input type="email" name='email' ref={emailRef} className="input" placeholder="Email" />
                         <label className="label">Password</label>
-                        <input type="password" name='password' className="input" placeholder="Password" />
+                        <div className='relative'>
+                            <input type={show ? 'text' : 'password'} name='password' className="input pr-[2.5rem]" placeholder="Password" />
+                            <div onClick={() => setShow(!show)} className='absolute top-1/2 right-[2rem] -translate-y-1/2 cursor-pointer z-10'>
+                                {show ? <IoEye size={18} /> : <IoEyeOff size={18} />}
+                            </div>
+                        </div>
                         <div><a onClick={handleForgotPassword} className="link link-hover">Forgot password?</a></div>
                         <button className="btn btn-neutral mt-4 bg-[#0FBD0F] border-0 text-white">Login</button>
                     </fieldset>

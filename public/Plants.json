@@ -1,0 +1,122 @@
+[
+  {
+    "plantId": 1,
+    "plantName": "Snake Plant",
+    "category": "Air Purifier",
+    "price": 18,
+    "rating": 4.8,
+    "availableStock": 10,
+    "careLevel": "Easy",
+    "description": "A hardy plant that purifies indoor air and thrives in low light.",
+    "image": "https://images.unsplash.com/photo-1593482892290-f54927ae1b6c?q=80&w=1000&auto=format&fit=crop",
+    "providerName": "UrbanGreen Studio"
+  },
+  {
+    "plantId": 2,
+    "plantName": "Monstera Deliciosa",
+    "category": "Decorative",
+    "price": 35,
+    "rating": 4.9,
+    "availableStock": 15,
+    "careLevel": "Moderate",
+    "description": "Known for its iconic heart-shaped leaves with natural holes.",
+    "image": "https://images.unsplash.com/photo-1614594975525-e45190c55d0b?auto=format&fit=crop&q=80&w=1000",
+    "providerName": "Jungle Vibes Co."
+  },
+  {
+    "plantId": 3,
+    "plantName": "Fiddle Leaf Fig",
+    "category": "Decorative",
+    "price": 45,
+    "rating": 4.5,
+    "availableStock": 5,
+    "careLevel": "Hard",
+    "description": "A stunning statement plant with large, violin-shaped waxy leaves.",
+    "image": "https://images.unsplash.com/photo-1542601906990-b4d3fb778b09?auto=format&fit=crop&q=80&w=1000",
+    "providerName": "Leafy Luxury"
+  },
+  {
+    "plantId": 4,
+    "plantName": "Aloe Vera",
+    "category": "Medicinal",
+    "price": 12,
+    "rating": 4.7,
+    "availableStock": 25,
+    "careLevel": "Easy",
+    "description": "Succulent with thick leaves containing soothing gel for skin burns.",
+    "image": "https://images.unsplash.com/photo-1596547609652-9cf5d8d76921?auto=format&fit=crop&q=80&w=1000",
+    "providerName": "Desert Bloom"
+  },
+  {
+    "plantId": 5,
+    "plantName": "Peace Lily",
+    "category": "Air Purifier",
+    "price": 22,
+    "rating": 4.6,
+    "availableStock": 12,
+    "careLevel": "Moderate",
+    "description": "Features elegant white blooms and dark green foliage; great for humidity.",
+    "image": "https://images.unsplash.com/photo-1593691509543-c55fb32e7355?q=80&w=1000&auto=format&fit=crop",
+    "providerName": "PureAir Flora"
+  },
+  {
+    "plantId": 6,
+    "plantName": "Spider Plant",
+    "category": "Air Purifier",
+    "price": 15,
+    "rating": 4.4,
+    "availableStock": 20,
+    "careLevel": "Easy",
+    "description": "Produces long, thin leaves and 'babies' that hang from the mother plant.",
+    "image": "https://images.unsplash.com/photo-1485955900006-10f4d324d411?auto=format&fit=crop&q=80&w=1000",
+    "providerName": "UrbanGreen Studio"
+  },
+  {
+    "plantId": 7,
+    "plantName": "Calathea Orbifolia",
+    "category": "Pet Friendly",
+    "price": 28,
+    "rating": 4.3,
+    "availableStock": 8,
+    "careLevel": "Hard",
+    "description": "A striking plant with wide, silver-striped leaves that move with the light.",
+    "image": "https://images.unsplash.com/photo-1620120966883-d977b57a96ec?q=80&w=1000&auto=format&fit=crop",
+    "providerName": "Petal & Pot"
+  },
+  {
+    "plantId": 8,
+    "plantName": "Pothos (Devil's Ivy)",
+    "category": "Climber",
+    "price": 10,
+    "rating": 4.9,
+    "availableStock": 40,
+    "careLevel": "Easy",
+    "description": "A trailing vine that is nearly impossible to kill and easy to propagate.",
+    "image": "https://images.unsplash.com/photo-1632498110531-155700863074?q=80&w=1000&auto=format&fit=crop",
+    "providerName": "Jungle Vibes Co."
+  },
+  {
+    "plantId": 9,
+    "plantName": "ZZ Plant",
+    "category": "Air Purifier",
+    "price": 24,
+    "rating": 4.8,
+    "availableStock": 14,
+    "careLevel": "Easy",
+    "description": "Characterized by shiny, waxy leaves; can survive weeks of neglect.",
+    "image": "https://images.unsplash.com/photo-1632207691143-643e2a9a9361?auto=format&fit=crop&q=80&w=1000",
+    "providerName": "Leafy Luxury"
+  },
+  {
+    "plantId": 10,
+    "plantName": "Rubber Tree",
+    "category": "Decorative",
+    "price": 30,
+    "rating": 4.6,
+    "availableStock": 9,
+    "careLevel": "Moderate",
+    "description": "Large, dark burgundy leaves make this a moody and stylish choice.",
+    "image": "https://images.unsplash.com/photo-1598880940371-c756e015fea1?auto=format&fit=crop&q=80&w=1000",
+    "providerName": "PureAir Flora"
+  }
+]
