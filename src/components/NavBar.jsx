@@ -52,9 +52,9 @@ const NavBar = () => {
                 </div>
                 <div className="navbar-end">
                     {
-                        loading ? <BeatLoader  color="#3db520" /> : user ? (<div className='h-[3.8rem] w-[3.8rem] rounded-full'>
+                        loading ? <BeatLoader color="#3db520" /> : user ? (<div className='h-[3.8rem] w-[3.8rem] rounded-full'>
                             <button className="btn h-full w-full rounded-full p-0" popoverTarget="popover-1" style={{ anchorName: "--anchor-1" }}>
-                                <img src="https://lh3.googleusercontent.com/a/ACg8ocJgmUgqp6xhMe9o36I7rzZsxoWGSgQizVNy92pFWoyXo0F5jfQ=s400-c" className='h-full w-full rounded-full object-cover' />
+                                <img src={user.photoURL} className='h-full w-full rounded-full object-cover' />
                             </button>
 
                             <ul className="dropdown menu w-fit rounded-box bg-base-100 shadow-sm space-y-2.5"
