@@ -40,10 +40,10 @@ const NavBar = () => {
                             {links}
                         </ul>
                     </div>
-                    <a className="text-[#0FBD0F] font-bold text-3xl flex items-center">
+                    <Link to='/' className="text-[#0FBD0F] font-bold text-3xl flex items-center">
                         <img src={logoImg} className='h-[2.5rem]' />
                         <span>GreenNest</span>
-                    </a>
+                    </Link>
                 </div>
                 <div className="navbar-center hidden lg:flex">
                     <ul className="menu menu-horizontal px-1">
@@ -52,7 +52,7 @@ const NavBar = () => {
                 </div>
                 <div className="navbar-end">
                     {
-                        loading ? <BeatLoader color="#3db520" /> : user ? (<div className='h-[3.8rem] w-[3.8rem] rounded-full'>
+                        loading ? <BeatLoader color="#3db520" /> : user ? (<div className='h-[3.8rem] w-[3.8rem] mr-2 md:mr-0 rounded-full'>
                             <button className="btn h-full w-full rounded-full p-0" popoverTarget="popover-1" style={{ anchorName: "--anchor-1" }}>
                                 <img src={user.photoURL} className='h-full w-full rounded-full object-cover' />
                             </button>
