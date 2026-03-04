@@ -62,7 +62,7 @@ const Login = () => {
                     <p className='text-gray-400 text-center mb-4'>Please enter your details to login</p>
                     <fieldset className="fieldset">
                         <label className="label">Email</label>
-                        <input type="email" name='email' ref={emailRef} className="input" placeholder="Email" />
+                        <input type="email" name='email' required ref={emailRef} className="input" placeholder="Email" />
                         <label className="label">Password</label>
                         <div className='relative'>
                             <input type={show ? 'text' : 'password'} name='password' className="input pr-[2.5rem]" placeholder="Password" />

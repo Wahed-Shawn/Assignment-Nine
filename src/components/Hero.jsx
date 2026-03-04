@@ -12,6 +12,7 @@ import bg2 from '../assets/bg2.jpg'
 import bg3 from '../assets/bg3.jpg'
 import bg4 from '../assets/bg4.jpg'
 import bg5 from '../assets/bg5.jpg'
+import { Link } from 'react-router';
 
 const Hero = () => {
     const slides = [bg1, bg2, bg3, bg4, bg5]
@@ -44,7 +45,7 @@ const Hero = () => {
                 <h1 className='text-[1.5rem] md:text-[2.8rem] font-bold text-center'>GreenNest – Indoor Plant Care & Store</h1>
                 <p className='text-xl font-semibold text-gray-300 text-center'>Breathe Better, Live Greener with our curated collection of indoor serenity.</p>
                 <div className="flex flex-col md:flex-row gap-3 md:gap-5 w-full md:w-fit px-4 md:px-0">
-                    <button onClick={() => { console.log('clicked') }} className='btn btn-outline text-lg p-6 text-white border-0 bg-[#0FBD0F]'>Shop Collection</button>
+                    <Link to='/plants' onClick={() => { console.log('clicked') }} className='btn btn-outline text-lg p-6 text-white border-0 bg-[#0FBD0F]'>Shop Collection</Link>
                     <button className='btn btn-outline text-lg p-6 text-white border-0 bg-white/10 backdrop-blur-[5px]'>Plant Care Guide</button>
                 </div>
             </div>

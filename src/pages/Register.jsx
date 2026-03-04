@@ -1,10 +1,13 @@
-import React, { use } from 'react';
+import React, { use, useState } from 'react';
 import { Link, useNavigate } from 'react-router';
 import { AuthContext } from '../provider/AuthContext';
 import { toast } from 'react-toastify';
+import { IoEye, IoEyeOff } from 'react-icons/io5';
 
 const Register = () => {
     const { createUser, updateProfileFunc } = use(AuthContext)
+    const [show, setShow] = useState(false)
+    const [error, setError] = useState('')
 
     const navigate = useNavigate()
 
@@ -17,6 +20,19 @@ const Register = () => {
 
         // console.log({ name, photoUrl, email, password })
 
+        if (!/[A-Z]/.test(password)) {
+            setError('Error: Must have an uppercase letter.')
+            return
+        }
+        else if (!/[a-z]/.test(password)) {
+            setError('Error: Must have a lowercase letter.')
+            return
+        }
+        else if (password.length < 6) {
+            setError('Error: Length must be at least 6 characters.')
+            return
+        }
+
         createUser(email, password)
             .then(result => {
                 updateProfileFunc({
@@ -25,6 +41,7 @@ const Register = () => {
                 })
                 console.log(result.user)
                 toast.success('Registration succesful')
+                setError('')
                 navigate('/')
             })
             .catch(error => {
@@ -45,11 +62,17 @@ const Register = () => {
                         <label className="label">Photo URL</label>
                         <input type="text" name='photoUrl' className="input" placeholder="Photo URL" />
                         <label className="label">Email</label>
-                        <input type="email" name='email' className="input" placeholder="Email" />
+                        <input type="email" name='email' required className="input" placeholder="Email" />
                         <label className="label">Password</label>
-                        <input type="password" name='password' className="input" placeholder="Password" />
+                        <div className='relative'>
+                            <input type={show ? 'text' : 'password'} name='password' className="input pr-[2.5rem]" placeholder="Password" />
+                            <div onClick={() => setShow(!show)} className='absolute top-1/2 right-[2rem] -translate-y-1/2 cursor-pointer z-10'>
+                                {show ? <IoEye size={18} /> : <IoEyeOff size={18} />}
+                            </div>
+                        </div>
                         <button className="btn btn-neutral mt-4 bg-[#0FBD0F] border-0 text-white">Register</button>
                     </fieldset>
+                    {error && <p className='text-red-600'>{error}</p>}
                     <p className='font-semibold'>Already have an account? Please <Link to='/login' className='text-blue-500 hover:underline hover:text-blue-700'>Login</Link></p>
                 </form>
             </div>
