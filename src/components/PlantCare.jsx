@@ -6,10 +6,10 @@ import { RiSunLine } from 'react-icons/ri';
 const PlantCare = () => {
     return (
         <div className='mb-[4rem]'>
-            <h1 className='text-center text-3xl font-semibold text-green-700'>Plant Care Basics</h1>
-            <p className='text-center mt-2 text-gray-500'>Nurturing your plants is a meditation. Follow these simple principles to keep your sanctuary thriving.</p>
+            <h1 className='text-center text-2xl font-semibold text-green-700 md:text-3xl'>Plant Care Basics</h1>
+            <p className='text-center mt-2 text-sm text-gray-500 md:text-[1rem]'>Nurturing your plants is a meditation. Follow these simple principles to keep your sanctuary thriving.</p>
 
-            <div className="grid grid-cols-3 gap-7 mt-8">
+            <div className="grid grid-cols-1 gap-7 mt-8 md:grid-cols-3">
                 <div className="bg-green-200 flex flex-col gap-2 justify-center items-center rounded-2xl h-[14rem] p-4">
                     <div className="bg-white h-[3rem] w-[3rem] rounded-full flex items-center justify-center">
                         <MdOutlineWaterDrop size={30} color='green' />

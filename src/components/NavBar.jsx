@@ -38,9 +38,13 @@ const NavBar = () => {
                             tabIndex="-1"
                             className="menu menu-sm dropdown-content bg-base-100 rounded-box z-1 mt-3 w-52 p-2 shadow">
                             {links}
+                            <div className="flex flex-col gap-3 md:hidden mt-2">
+                                <Link to='/login' className="btn bg-[#cef7ce] text-green-600 border-0">Login</Link>
+                                <Link to='/register' className="btn bg-[#0FBD0F] text-white border-0">Register</Link>
+                            </div>
                         </ul>
                     </div>
-                    <Link to='/' className="text-[#0FBD0F] font-bold text-3xl flex items-center">
+                    <Link to='/' className="text-[#0FBD0F] font-bold text-2xl flex items-center md:text-3xl">
                         <img src={logoImg} className='h-[2.5rem]' />
                         <span>GreenNest</span>
                     </Link>
@@ -63,7 +67,7 @@ const NavBar = () => {
                                 <li className='text-center font-semibold'>{user.email}</li>
                                 <li><button onClick={handleLogOut} className='btn btn-outline btn-error hover:text-white text-lg'>log Out</button></li>
                             </ul>
-                        </div>) : <div className='space-x-3.5'>
+                        </div>) : <div className='space-x-3.5 hidden md:block'>
                             <Link to='/login' className="btn bg-[#cef7ce] text-green-600 border-0">Login</Link>
                             <Link to='/register' className="btn bg-[#0FBD0F] text-white border-0">Register</Link>
                         </div>

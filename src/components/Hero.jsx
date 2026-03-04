@@ -17,7 +17,7 @@ const Hero = () => {
     const slides = [bg1, bg2, bg3, bg4, bg5]
 
     return (
-        <div className="relative h-[29rem] overflow-hidden">
+        <div className="relative h-[22rem] overflow-hidden md:h-[29rem]">
             <Swiper
                 spaceBetween={30}
                 centeredSlides={true}
@@ -34,17 +34,17 @@ const Hero = () => {
                 {
                     slides.map(slide =>
                         <SwiperSlide>
-                            <div className="h-[29rem] text-white rounded-2xl bg-cover bg-center" style={{ backgroundImage: `url(${slide})` }}></div>
+                            <div className="h-[22rem] md:h-[29rem] w-full text-white rounded-2xl bg-cover bg-center" style={{ backgroundImage: `url(${slide})` }}></div>
                         </SwiperSlide>
                     )
                 }
             </Swiper>
 
             <div className="absolute z-30 text-white bg-black/40 rounded-2xl h-full w-full top-0 left-0 flex flex-col items-center justify-center gap-5">
-                <h1 className='text-[2.8rem] font-bold'>GreenNest – Indoor Plant Care & Store</h1>
-                <p className='text-xl font-semibold text-gray-300'>Breathe Better, Live Greener with our curated collection of indoor serenity.</p>
-                <div className="space-x-5">
-                    <button onClick={() => {console.log('clicked')}} className='btn btn-outline text-lg p-6 text-white border-0 bg-[#0FBD0F]'>Shop Collection</button>
+                <h1 className='text-[1.5rem] md:text-[2.8rem] font-bold text-center'>GreenNest – Indoor Plant Care & Store</h1>
+                <p className='text-xl font-semibold text-gray-300 text-center'>Breathe Better, Live Greener with our curated collection of indoor serenity.</p>
+                <div className="flex flex-col md:flex-row gap-3 md:gap-5 w-full md:w-fit px-4 md:px-0">
+                    <button onClick={() => { console.log('clicked') }} className='btn btn-outline text-lg p-6 text-white border-0 bg-[#0FBD0F]'>Shop Collection</button>
                     <button className='btn btn-outline text-lg p-6 text-white border-0 bg-white/10 backdrop-blur-[5px]'>Plant Care Guide</button>
                 </div>
             </div>

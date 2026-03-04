@@ -9,21 +9,21 @@ const PlantDetails = () => {
     const { id } = useParams()
 
     const selectedPlant = plantsData.find(plant => plant.plantId == id)
-    const { plantName, image, category, price, rating, plantId, availableStock, careLevel, description } = selectedPlant
+    const { plantName, image, category, price, rating, availableStock, careLevel, description } = selectedPlant
     console.log(selectedPlant)
 
     return (
-        <div className='flex justify-between px-4'>
-            <div className="w-[57%]">
-                <div className="h-[30rem] rounded-2xl overflow-hidden">
+        <div className='flex flex-col justify-between px-4 md:flex-row'>
+            <div className="w-full md:w-[57%]">
+                <div className="h-[20rem] rounded-2xl overflow-hidden md:h-[30rem]">
                     <img src={image} className='h-full w-full object-cover object-center' />
                 </div>
                 <div className="flex items-center justify-between">
                     <div className="mt-5">
-                        <h1 className='text-4xl font-bold'>{plantName}</h1>
+                        <h1 className='text-xl font-bold md:text-4xl'>{plantName}</h1>
                         <p className='text-xl font-semibold text-gray-600'>{category}</p>
                     </div>
-                    <span className="badge bg-[#0FBD0F] text-white px-6 py-5 text-lg font-semibold">
+                    <span className="badge bg-[#0FBD0F] text-white py-4 text-lg font-semibold md:px-6 md:py-5">
                         ${price}
                     </span>
                 </div>

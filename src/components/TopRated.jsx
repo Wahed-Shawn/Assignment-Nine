@@ -16,19 +16,19 @@ const TopRated = () => {
 
     return (
         <div className='mt-[8rem] mb-[4rem]'>
-            <h1 className='text-3xl font-semibold'>Top Rated Indoor Plants</h1>
-            <p className='mb-2 text-gray-500'>Discover the most loved companions for your living spaces.</p>
+            <h1 className='text-2xl font-semibold text-center md:text-3xl'>Top Rated Indoor Plants</h1>
+            <p className='mb-2 text-sm text-center text-gray-500 md:text-[1rem]'>Discover the most loved companions for your living spaces.</p>
 
             <div className="">
                 <div className="flex items-center justify-end mb-4 gap-3">
-                    <button className='prev-nav-btn h-[2.5rem] w-[2.5rem] rounded-full flex items-center justify-center bg-gray-300 cursor-pointer'><GrFormPreviousLink size={22} /></button>
-                    <button className='next-nav-btn h-[2.5rem] w-[2.5rem] rounded-full flex items-center justify-center bg-gray-300 cursor-pointer'><GrFormNextLink size={22} /></button>
+                    <button className='prev-nav-btn h-[2rem] w-[2rem] rounded-full flex items-center justify-center bg-gray-300 cursor-pointer md:h-[2.5rem] w-[2.5rem]'><GrFormPreviousLink size={22} /></button>
+                    <button className='next-nav-btn h-[2rem] w-[2rem] rounded-full flex items-center justify-center bg-gray-300 cursor-pointer md:h-[2.5rem] w-[2.5rem]'><GrFormNextLink size={22} /></button>
                 </div>
 
                 <Swiper
                     modules={[Navigation]}
                     spaceBetween={40}
-                    slidesPerView={2}
+                    slidesPerView={1}
                     navigation={{
                         prevEl: '.prev-nav-btn',
                         nextEl: '.next-nav-btn',

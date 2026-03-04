@@ -7,12 +7,12 @@ import DecorIdeas from '../components/DecorIdeas';
 
 const Home = () => {
     return (
-        <div className='xl:px-3'>
+        <div className='px-3'>
             <Hero />
             <TopRated />
             <PlantCare />
             <GreenExperts />
-            <DecorIdeas />
+            {/* <DecorIdeas /> */}
         </div>
     );
 };

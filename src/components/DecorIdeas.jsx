@@ -6,11 +6,11 @@ const DecorIdeas = () => {
             <h1 className='text-center text-3xl font-semibold text-black/80'>Inspired Living</h1>
             <p className='text-center text-gray-600 mt-1.5 mb-9'>Glimpses into how our community creates their green haven.</p>
 
-            <div className="h-[28rem] grid grid-cols-12 gap-8">
-                <div className="bg-amber-500 h-[28rem] w-full col-span-6 rounded-3xl overflow-hidden">
+            <div className="md:h-[28rem] grid md:grid-cols-12 gap-8">
+                <div className="h-[28rem] col-span-12 md:col-span-6 rounded-3xl overflow-hidden">
                     <img className='w-full h-full object-cover object-center' src="https://images.unsplash.com/photo-1592150621744-aca64f48394a?q=80&w=891&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D" />
                 </div>
-                <div className="h-[28rem] col-span-6 grid grid-cols-12 grid-rows-12 gap-5">
+                <div className="h-[28rem] col-span-12 md:col-span-6 grid grid-cols-12 grid-rows-12 gap-5">
                     <div className="bg-green-600 col-span-6 row-span-5 rounded-2xl overflow-hidden">
                         <img className='h-full w-full object-cover' src="https://images.unsplash.com/photo-1766300289687-84aef205da4c?q=80&w=774&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"  />
                     </div>

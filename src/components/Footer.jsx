@@ -5,7 +5,7 @@ import { FaFacebookSquare, FaInstagram, FaPinterestSquare } from 'react-icons/fa
 const Footer = () => {
     return (
         <div className="mt-[5rem] text-white">
-            <footer className="footer grid grid-cols-4 container mx-auto  bg-[#2D3E2D] py-10 px-4">
+            <footer className="footer grid grid-cols-1 md:grid-cols-4 container mx-auto  bg-[#2D3E2D] py-10 px-4">
                 <nav>
                     <h6 className="footer-title">Services</h6>
                     <a className="link link-hover">Branding</a>
@@ -51,7 +51,7 @@ const Footer = () => {
                     </div>
                 </aside>
                 <nav className="md:place-self-center md:justify-self-end">
-                    <div className="grid grid-flow-col gap-4">
+                    <div className="grid grid-flow-col justify-items-center gap-4">
                         <FaInstagram size={30} />
                         <FaFacebookSquare size={30} />
                         <FaPinterestSquare size={30} />
