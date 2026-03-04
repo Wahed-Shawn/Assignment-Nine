@@ -7,6 +7,7 @@ import Login from "../pages/Login";
 import Register from "../pages/Register";
 import PrivateRoute from "./PrivateRoute";
 import PlantDetails from "../pages/PlantDetails";
+import Spinner from "../components/Spinner";
 
 const router = createBrowserRouter([
     {
@@ -16,17 +17,20 @@ const router = createBrowserRouter([
             {
                 index: true,
                 Component: Home,
-                loader: () => fetch('/Plants.json')
+                loader: () => fetch('/Plants.json'),
+                hydrateFallbackElement: <Spinner />
             },
             {
                 path: '/plants',
                 Component: Plants,
-                loader: () => fetch('/Plants.json')
+                loader: () => fetch('/Plants.json'),
+                hydrateFallbackElement: <Spinner />
             },
             {
                 path: '/plantDetails/:id',
                 element: <PrivateRoute><PlantDetails /></PrivateRoute>,
-                loader: () => fetch('/Plants.json')
+                loader: () => fetch('/Plants.json'),
+                hydrateFallbackElement: <Spinner />
             },
             {
                 path: '/myProfile',

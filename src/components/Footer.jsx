@@ -4,7 +4,7 @@ import { FaFacebookSquare, FaInstagram, FaPinterestSquare } from 'react-icons/fa
 
 const Footer = () => {
     return (
-        <div className="mt-[5rem] text-white">
+        <div className="mt-[7rem] text-white">
             <footer className="footer grid grid-cols-1 md:grid-cols-4 container mx-auto  bg-[#2D3E2D] py-10 px-4">
                 <nav>
                     <h6 className="footer-title">Services</h6>

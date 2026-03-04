@@ -12,7 +12,7 @@ const Home = () => {
             <TopRated />
             <PlantCare />
             <GreenExperts />
-            {/* <DecorIdeas /> */}
+            <DecorIdeas />
         </div>
     );
 };
