@@ -39,15 +39,17 @@ const Register = () => {
                     displayName,
                     photoURL
                 })
-                console.log(result.user)
+                // console.log(result.user)
                 toast.success('Registration succesful')
                 setError('')
                 navigate('/')
             })
             .catch(error => {
-                console.log(error.message)
+                // console.log(error.message)
                 toast.error(error.message)
             })
+
+        e.target.reset()
     }
 
     return (
@@ -58,9 +60,9 @@ const Register = () => {
                     <p className='text-gray-400 mb-4 text-center'>Create an account to start your plant journey</p>
                     <fieldset className="fieldset">
                         <label className="label">Name</label>
-                        <input type="text" name='name' className="input" placeholder="Name" />
+                        <input type="text" name='name' required className="input" placeholder="Name" />
                         <label className="label">Photo URL</label>
-                        <input type="text" name='photoUrl' className="input" placeholder="Photo URL" />
+                        <input type="text" name='photoUrl' required className="input" placeholder="Photo URL" />
                         <label className="label">Email</label>
                         <input type="email" name='email' required className="input" placeholder="Email" />
                         <label className="label">Password</label>

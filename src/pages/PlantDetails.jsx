@@ -10,7 +10,7 @@ const PlantDetails = () => {
 
     const selectedPlant = plantsData.find(plant => plant.plantId == id)
     const { plantName, image, category, price, rating, availableStock, careLevel, description } = selectedPlant
-    console.log(selectedPlant)
+    // console.log(selectedPlant)
 
     return (
         <div className='flex flex-col justify-between md:px-4 md:flex-row'>

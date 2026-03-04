@@ -9,7 +9,7 @@ const UpdateProfile = () => {
         // e.preventDefault()
         const displayName = e.target.name.value
         const photoURL = e.target.photoUrl.value
-        console.log(displayName,photoURL,'clicked')
+        // console.log(displayName,photoURL,'clicked')
 
         updateProfileFunc({
             displayName,

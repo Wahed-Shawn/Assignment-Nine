@@ -12,26 +12,28 @@ const Login = () => {
     const emailRef = useRef()
     const navigate = useNavigate()
     const location = useLocation()
-    console.log(location)
+    // console.log(location)
 
     const handleLogin = e => {
         e.preventDefault()
         const email = e.target.email.value
         const password = e.target.password.value
 
-        console.log({ email, password })
+        // console.log({ email, password })
 
         logInUser(email, password)
             .then(result => {
-                console.log(result.user)
+                // console.log(result.user)
                 toast.success('Login succesful')
                 setUser(result.user)
                 navigate(location.state || '/')
             })
             .catch(error => {
-                console.log(error.message)
+                // console.log(error.message)
                 toast.error(error.message)
             })
+
+        e.target.reset()
     }
 
     const handleGoogleSIgnIn = () => {
@@ -51,7 +53,7 @@ const Login = () => {
     const handleForgotPassword = () => {
         resetPassword(emailRef.current.value)
         toast.info('Please check your email to reset password')
-        console.log(emailRef.current.value)
+        // console.log(emailRef.current.value)
     }
 
     return (
