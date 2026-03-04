@@ -13,8 +13,8 @@ const PlantDetails = () => {
     console.log(selectedPlant)
 
     return (
-        <div className='flex flex-col justify-between px-4 md:flex-row'>
-            <div className="w-full md:w-[57%]">
+        <div className='flex flex-col justify-between md:px-4 md:flex-row'>
+            <div className="w-full px-3 md:w-[57%] md:px-0">
                 <div className="h-[20rem] rounded-2xl overflow-hidden md:h-[30rem]">
                     <img src={image} className='h-full w-full object-cover object-center' />
                 </div>
@@ -28,7 +28,7 @@ const PlantDetails = () => {
                     </span>
                 </div>
 
-                <div className="grid grid-cols-3 gap-6 my-6">
+                <div className="grid grid-cols-2 lg:grid-cols-3 gap-6 my-6">
                     <div className="p-4 h-[6rem] rounded-xl bg-green-200 flex flex-col justify-center gap-1">
                         <h3 className='text-gray-500 font-semibold text-sm'>RATING</h3>
                         <div className='flex items-center gap-1.5'><span className='text-2xl font-semibold'>{rating}</span> <IoIosStar size={20} color='orange' /></div>
@@ -55,7 +55,7 @@ const PlantDetails = () => {
                 </div>
             </div>
 
-            <div className="w-[40%]">
+            <div className="w-full md:w-[40%]">
                 <ConsultationForm />
             </div>
         </div>

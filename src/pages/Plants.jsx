@@ -8,7 +8,7 @@ const Plants = () => {
         <div className='px-4'>
             <h1 className='text-3xl text-gray-700 text-center font-bold mb-8'>Our Plants Collection</h1>
 
-            <div className="grid grid-cols-1 gap-8 md:grid-cols-3">
+            <div className="grid grid-cols-1 gap-8 md:grid-cols-2 lg:grid-cols-3">
                 {
                     plantsData.map(plant => <PlantCard key={plant.plantId} plant={plant} />)
                 }

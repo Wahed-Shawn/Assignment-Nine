@@ -21,8 +21,8 @@ const TopRated = () => {
 
             <div className="">
                 <div className="flex items-center justify-end mb-4 gap-3">
-                    <button className='prev-nav-btn h-[2rem] w-[2rem] rounded-full flex items-center justify-center bg-gray-300 cursor-pointer md:h-[2.5rem] w-[2.5rem]'><GrFormPreviousLink size={22} /></button>
-                    <button className='next-nav-btn h-[2rem] w-[2rem] rounded-full flex items-center justify-center bg-gray-300 cursor-pointer md:h-[2.5rem] w-[2.5rem]'><GrFormNextLink size={22} /></button>
+                    <button className='prev-nav-btn h-[2rem] w-[2rem] rounded-full flex items-center justify-center bg-gray-300 cursor-pointer md:h-[2.5rem] md:w-[2.5rem]'><GrFormPreviousLink size={22} /></button>
+                    <button className='next-nav-btn h-[2rem] w-[2rem] rounded-full flex items-center justify-center bg-gray-300 cursor-pointer md:h-[2.5rem] md:w-[2.5rem]'><GrFormNextLink size={22} /></button>
                 </div>
 
                 <Swiper
